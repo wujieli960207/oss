@@ -14,6 +14,7 @@ interface Preferences {
   region: string;
   pngpasteFullPath: string;
   domain: string;
+  storagePath: string;
 }
 
 type Pic = {
@@ -79,7 +80,10 @@ export default function main() {
     });
     try {
       setLoading(true);
-      const { url } = await store.put(`${dayjs().format("YYYY-MM")}/${picName}`, "/tmp/upload-to-oss");
+      const { url } = await store.put(
+        `${preferences.storagePath}/${dayjs().format("YYYY-MM")}/${picName}`,
+        "/tmp/upload-to-oss"
+      );
       if (url) {
         setLoading(false);
         return { url, picName };

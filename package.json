@@ -5,6 +5,9 @@
   "description": "Publish the picture in your clipboard to Aliyun oss, and return the URL.",
   "icon": "command-icon.png",
   "author": "yangxy",
+  "contributors": [
+    "wujieli0207"
+  ],
   "license": "MIT",
   "commands": [
     {
@@ -60,6 +63,13 @@
       "required": false,
       "placeholder": "https://raycast.com",
       "description": "Your custom domain name"
+    },
+    {
+      "name": "storagePath",
+      "title": "Custom Storage Path",
+      "type": "textfield",
+      "required": false,
+      "description": "Your custom storage path, eg: img, url will be http://xxx.aliyuncs.com/img/xxx.png"
     }
   ],
   "dependencies": {
